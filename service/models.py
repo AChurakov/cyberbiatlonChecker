@@ -3,10 +3,10 @@ from django.db import models
 # Create your models here.
 
 class Team(models.Model):
-    team_name = models.CharField(max_length=255, verbose_name='Имя команнды')
+    team_name = models.CharField(max_length=254, verbose_name='Имя команнды')
     att_points = models.FloatField(default=0, verbose_name='Attack points')
-    def_points = models.FloatField(default=0, verbose_name='Defense Points')
 
+    def_points = models.FloatField(default=0, verbose_name='Defense Points')
 
     class Meta:
         verbose_name = 'Команда'
@@ -17,7 +17,7 @@ class Team(models.Model):
 
 
 class Service(models.Model):
-    name_service = models.CharField(max_length='255', verbose_name='Имя Сервиса')
+    name_service = models.CharField(max_length=254, verbose_name='Имя Сервиса')
     exploit = models.TextField(default='None', verbose_name='Уязвимость')
 
     class Meta:
@@ -29,9 +29,9 @@ class Service(models.Model):
 
 
 class Task(models.Model):
-    name_task = models.CharField(max_length='255', verbose_name='Название Задания')
+    name_task = models.CharField(max_length=254, verbose_name='Название Задания')
     text_task = models.TextField(verbose_name='Описание', default='None')
-    task_flag = models.CharField(max_length='255', verbose_name='Flag')
+    task_flag = models.CharField(max_length=254, verbose_name='Flag')
     att_points = models.FloatField(default=0, verbose_name='Points')
 
     class Meta:
@@ -56,9 +56,9 @@ class Complete_task(models.Model):
 
 
 class Def_service(models.Model):
-    name_service = models.CharField(max_length='255', verbose_name='Название Задания')
+    name_service = models.CharField(max_length=254, verbose_name='Название Задания')
     text_service = models.TextField(verbose_name='Описание', default='None')
-    service_exploit = models.CharField(max_length='255', verbose_name='Flag')
+    service_exploit = models.CharField(max_length=254, verbose_name='Flag')
     def_points = models.FloatField(default=0, verbose_name='Points')
 
     class Meta:

@@ -11,14 +11,9 @@ from .poll_api import Api
 def api(request, method_name):
     poll_api = Api()
     poll_api.method = method_name
-    if request.POST['team_name']:
-        poll_api.team_name = request.POST['team_name']
-    else:
-        poll_api.team_name = None
-    if request.POST['flag']:
-        poll_api.flag = request.POST['flag']
-    else:
-        poll_api.flag = request.POST['flag']
+    poll_api.team_name = request.POST.get('team_name', None)
+    poll_api.flag = request.POST.get('flag', None)
+
 
     data = poll_api.select_method()
 
